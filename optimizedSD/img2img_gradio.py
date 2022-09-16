@@ -264,7 +264,7 @@ demo = gr.Interface(
         "text",
         gr.Slider(0, 1, value=0.75),
         gr.Slider(1, 1000, value=50),
-        gr.Slider(1, 100, step=1),
+        gr.Slider(1, 10, step=1),
         gr.Slider(1, 100, step=1),
         gr.Slider(64, 4096, value=512, step=64),
         gr.Slider(64, 4096, value=512, step=64),
@@ -275,9 +275,9 @@ demo = gr.Interface(
         "text",
         gr.Text(value="outputs/img2img-samples"),
         gr.Radio(["png", "jpg"], value='png'),
-        "checkbox",
+        gr.Checkbox(value=True),
         "checkbox",
     ],
     outputs=["image", "text"],
 )
-demo.launch()
+demo.launch(server_name="0.0.0.0", server_port=80)
