@@ -268,7 +268,7 @@ demo = gr.Interface(
         gr.Slider(1, 100, step=1),
         gr.Slider(64, 4096, value=512, step=64),
         gr.Slider(64, 4096, value=512, step=64),
-        gr.Slider(0, 50, value=7.5, step=0.1),
+        gr.Slider(0, 50, value=3.0, step=0.1),
         gr.Slider(0, 1, step=0.01),
         gr.Slider(1, 2, value=1, step=1),
         gr.Text(value="cuda"),
@@ -280,4 +280,4 @@ demo = gr.Interface(
     ],
     outputs=["image", "text"],
 )
-demo.launch(server_name="0.0.0.0", server_port=80)
+demo.launch(share=True)

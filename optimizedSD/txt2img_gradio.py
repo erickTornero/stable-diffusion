@@ -234,17 +234,17 @@ demo = gr.Interface(
         gr.Slider(1, 100, step=1),
         gr.Slider(64, 4096, value=512, step=64),
         gr.Slider(64, 4096, value=512, step=64),
-        gr.Slider(0, 50, value=7.5, step=0.1),
+        gr.Slider(0, 50, value=3.0, step=0.1),
         gr.Slider(0, 1, step=0.01),
         gr.Slider(1, 2, value=1, step=1),
         gr.Text(value="cuda"),
         "text",
         gr.Text(value="outputs/txt2img-samples"),
         gr.Radio(["png", "jpg"], value='png'),
-        "checkbox",
+        gr.Checkbox(value=True),
         "checkbox",
         gr.Radio(["ddim", "plms","heun", "euler", "euler_a", "dpm2", "dpm2_a", "lms"], value="plms"),
     ],
     outputs=["image", "text"],
 )
-demo.launch()
+demo.launch(share=True)
